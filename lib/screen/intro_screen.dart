@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ott101/component/colors.dart';
 import 'package:ott101/provider/app_provider.dart';
 import 'package:ott101/screen/select_profile_screen.dart';
 
@@ -28,7 +29,7 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF080E1D),
+      backgroundColor: kBackground,
       body: Stack(
         children: [
           AnimatedOpacity(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ott101/component/colors.dart';
 import 'package:ott101/provider/app_provider.dart';
 import 'package:ott101/screen/intro_screen.dart';
 
