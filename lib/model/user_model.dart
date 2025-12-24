@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 class UserModel {
   final int id;
@@ -14,6 +15,14 @@ class UserModel {
     required this.g,
     required this.b,
   });
+
+  Color get color {
+    return Color.fromARGB(255, r, g, b);
+  }
+
+  String get firstCharOfName {
+    return name.isNotEmpty ? name[0] : '';
+  }
 
   factory UserModel.createUser() {
     return UserModel(

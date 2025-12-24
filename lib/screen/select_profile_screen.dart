@@ -3,6 +3,7 @@ import 'package:ott101/component/colors.dart';
 import 'package:ott101/component/user_avatar.dart';
 import 'package:ott101/provider/app_provider.dart';
 import 'package:ott101/screen/add_profile_screen.dart';
+import 'package:ott101/screen/main_tab_screen.dart';
 
 class SelectProfileScreen extends StatefulWidget {
   const SelectProfileScreen({super.key});
@@ -69,7 +70,17 @@ class _SelectProfileScreenState extends State<SelectProfileScreen> {
                   final user = appProvider.userList[index];
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: UserAvatar(user: user),
+                    child: GestureDetector(
+                      onTap: () {
+                        appProvider.selectUser(user);
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) {
+                            return MainTabScreen();
+                          },
+                        ));
+                      },
+                      child: UserAvatar(user: user),
+                    ),
                   );
                 },
               ),
